@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*重置浏览器样式*/
+        * {
+            padding:0;
+            margin:0;
+        }
+        a {
+            text-decoration:none;
+        }
+        ul {
+            list-style-type:none;
+        }
+
+        /*清除浮动*/
+        .clear:after{
+            content:"";
+            display:block;
+            height:0;
+            clear:both;
+        }
+
+
+
+
+        body{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        /*导航栏样式*/
+        ul{
+            padding:0;
+        }
+        ul li{
+            list-style-type: none;
+            
+        }
+        header{
+            width:100%;
+            background: rgb(24,24,24);
+        }
+        
+        nav{
+            margin: 0 auto;
+            display:flex;
+            
+            height:60px;
+            width:100%;
+            width:1300px;
+        }
+        nav ul:nth-child(1){
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            color: white;
+            font-size: 15px;
+            line-height: 60px;
+            width:35%;
+            vertical-align:middle;
+        }
+        nav ul:nth-child(1) img{
+            vertical-align:middle;
+        }
+        nav ul:nth-child(1) a{
+            color:white;
+        }
+        nav ul:nth-child(1) a:hover{
+            color:orange;
+        }
+        nav ul:nth-child(2){
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            color:rgba(255,255,255,0.8);
+            font-size:13px;
+            line-height: 60px;
+            text-align: center;
+            padding-left: 100px;
+        }
+        nav ul:nth-child(2) li{
+            width:85px;
+            display: flex;
+        }
+        nav ul:nth-child(2) span{
+            background-image: url(./images/8x7cejPCVRaEBEDHg7ezDs.png);
+            width:20px;
+            height:15px;
+            background-position: -230px -26px;
+            background-repeat: no-repeat;
+            margin-top: 23px;
+        }
+        nav ul:nth-child(2) a{
+            color:rgba(255,255,255,0.8);
+        }
+        nav ul:nth-child(2) a:hover{
+            color:orange;
+        }
+        nav ul:nth-child(3){
+            color:white;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            font-size:15px;
+            line-height: 60px;
+            text-align: center;
+        }
+        nav ul:nth-child(3) li:nth-child(n):hover{
+            color: orange;
+        }
+        nav ul:nth-child(3) li:nth-child(1){
+            width: 100px;
+        }
+        nav ul:nth-child(3) li:nth-child(2){
+            width: 60px;
+        }
+        nav ul:nth-child(3) li:nth-child(3){
+            width: 30px;
+        }
+        nav ul:nth-child(4){
+            padding-left: 8px;
+        }
+        nav ul:nth-child(4) li{
+            width:190px;
+            margin-top: 9.5%;
+            padding-left: 5px;
+            height:30px;
+            background-image: url(./images/hRzX3n2eFHEyPd93FriVox.png);
+            background-repeat: no-repeat;
+        }
+        nav ul:nth-child(4) input{
+            background:rgb(51,51,51);
+            padding-left: 3px;
+            border:none;
+            outline: none;
+            color:rgba(223, 221, 221, 0.671);
+            width:140px;
+        }
+
+
+        /*页面主体样式*/
+        article{
+            width:60%;
+            height:467px;
+            
+        }
+        article>div>*{
+            margin:0 auto;
+        }
+        article h1{
+            padding-top: 5%;
+            padding-bottom: 2%;
+            margin: 0 auto;
+        }
+        article ul:nth-child(1){
+            margin: 0 auto;
+            padding-bottom: 0.5%;
+        }
+        article ul:nth-child(1) li{
+            display: inline-block;
+            font-size: 14px;
+        }
+        article ul:nth-child(1) li div{
+            display: inline-block;
+        }
+        article ul:nth-child(1) li:nth-child(4){
+            text-align: end;
+            background: url(./images/bbHRbrtQkXjFLRSChCcxPi.jpg) no-repeat 3px 4px;
+        }
+        
+        article hr{
+            margin-top: 1%;
+        }
+        #text::-webkit-scrollbar{
+            width:5px;
+            height:10px;
+        }
+        #text::-webkit-scrollbar-thumb{
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            background: #706f6f;
+        }
+        
+
+
+
+
+
+
+        /*音乐播放器部分样式*/
+        aside{
+            width:40%;
+            height:467px;
+        }
+        aside>img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 20%;
+        }
+        .control{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .innercontrol:nth-child(1){
+            width:40px;
+            height:40px;
+            background: url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat -162px 0px;
+        }
+        .innercontrol:nth-child(2){
+            margin-left: 10px;
+            width:300px;
+            display: flex;
+        }
+        #progressbar{
+            margin-top: 19px;
+        }
+        #showtime{
+            margin-top: 10px;
+            color: rgb(110, 110, 110);
+            margin-left: 10px;
+        }
+        .innercontrol:nth-child(3){
+            margin-left: 10px;
+            margin-top: 11px;
+            width:20px;
+            height:20px;
+            background: url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat -69px 0px;
+        }
+        .download{
+            height: 40px;
+            line-height: 40px;
+            width:198px;
+            font-size: 14px;
+            color: rgba(49, 49, 49, 0.863);
+            background: url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat 0px -48px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="./images/EBbGwpYnuxzNj2n4pu4QWG.jpg" alt=""></a></li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">榜单</a></li>
+                <li><a href="#">歌手</a></li>
+                <li><a href="#">下载酷我客户端</a></li>
+            </ul>
+            <ul>
+                <li>
+                    
+                    <span></span>
+                    <div><a href="#">美女秀</a></div>
+                </li>
+                <li>
+                    <span></span>
+                    <div><a href="#">酷我耳机</a></div>
+                </li>
+                <li>
+                    <span></span>
+                    <div><a href="#">VIP会员</a></div>
+                </li>
+                <li>
+                    <span></span>
+                    <div><a href="#">i听</a></div>
+                </li>
+            </ul>
+            <ul>
+                <li>更多服务</li>
+                <li id='log_on'>
+                    <div>登录</div>
+                    <div id='user' style='display:none;z-index: 1;width:600px;height:400px;color:black;position: relative;left:-1200%;background: rgb(175, 174, 174);'>
+                        <table>
+                            <tr>
+                                <td>手机号</td>
+                                <td><input type="tel" id='telnum'></td>
+                            </tr>
+                            <tr>
+                                <td>用户名</td>
+                                <td><input type="text" id='nameofuser'></td>
+                            </tr>
+                            <tr>
+                                <td>密码</td>
+                                <td><input type="password" id='passwordofuser'></td>
+                            </tr>
+                            <tr>
+                                <td><button id='submit'>登录</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>^</li>
+            </ul>
+            <ul>
+                <li>
+                    <input type="text" value="找到好音乐">
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <div>
+            <h1 style="width:100px">喜羊羊</h1>
+            <div>
+                <ul style='width:350px'>
+                    <li>
+                        <div style="width:50px">专辑：</div>
+                        <div style="width:65px;color:orange">儿歌大全</div>
+                    </li>
+                    <li>
+                        <div style="width:50px">歌手：</div>
+                        <div style="width:65px;color:orange">华语群星</div>
+                    </li>
+                    <li style="width:35px">分享</li>
+                    <li style="width:50px;color:orange">评论</li>
+                </ul>
+            </div>
+            <div style='width:300px;font-size:9px'>上传时间：2015-10-02 歌曲来源：民大相思湖网球社</div>
+            <hr style="width:90%;background-color:rgb(225, 225, 226); height:1px; border:none;margin-bottom: 20px;">
+        </div>
+        <div style='height:300px;overflow:auto;text-align: center;line-height:30px;font-size: 15px;color: black;' id='text'>
+            <div class='stress'>作词：古倩敏</div>
+            <div class='stress'>作曲：古倩敏</div>
+            <div class='stress'>喜羊羊美羊羊</div>
+            <div class='stress'>懒羊羊沸羊羊</div>
+            <div class='stress'>慢羊羊软绵绵</div>
+            <div class='stress'>红太狼灰太狼</div>
+            <div class='stress'>别看我只是一只羊</div>
+            <div class='stress'>绿草因为我变得更香</div>
+            <div class='stress'>天空因为我变得更蓝</div>
+            <div class='stress'>白云因为我变得柔软</div>
+            <div class='stress'>别看我只是一只羊</div>
+            <div class='stress'>羊儿的聪明难以想象</div>
+            <div class='stress'>天再高心情一样奔放</div>
+            <div class='stress'>每天都追赶太阳</div>
+            <div class='stress'>有什么难题去牵绊我</div>
+            <div class='stress'>都不会去心伤</div>
+            <div class='stress'>有什么危险在我面前</div>
+            <div class='stress'>也不会去慌乱</div>
+            <div class='stress'>就算有狼群把我追捕</div>
+            <div class='stress'>也当作游戏一场</div>
+            <div class='stress'>在什么时间都爱开心</div>
+            <div class='stress'>笑容都会飞翔</div>
+            <div class='stress'>就算会摔倒站得起来</div>
+            <div class='stress'>永远不会沮丧</div>
+            <div class='stress'>在所有天气</div>
+            <div class='stress'>拥有叫人大笑的力量</div>
+            <div class='stress'>虽然我只是羊</div>
+            <div class='stress'>喜羊羊美羊羊</div>
+            <div class='stress'>懒羊羊沸羊羊</div>
+            <div class='stress'>慢羊羊软绵绵</div>
+            <div class='stress'>红太狼灰太狼</div>
+            <div class='stress'>别看我只是一只羊</div>
+            <div class='stress'>绿草因为我变得更香</div>
+            <div class='stress'>天空因为我变得更蓝</div>
+            <div class='stress'>白云变得更柔软</div>
+            <div class='stress'>有什么难题去牵绊我</div>
+            <div class='stress'>都不会去心伤</div>
+            <div class='stress'>有什么危险在我面前</div>
+            <div class='stress'>也不会去慌乱</div>
+            <div class='stress'>就算有狼群把我追捕</div>
+            <div class='stress'>也当作游戏一场</div>
+            <div class='stress'>在什么时间都爱开心</div>
+            <div class='stress'>笑容都会飞翔</div>
+            <div class='stress'>就算会摔倒站得起来</div>
+            <div class='stress'>永远不会沮丧</div>
+            <div class='stress'>在所有天气</div>
+            <div class='stress'>拥有叫人大笑的力量</div>
+            <div class='stress'>虽然我只是羊</div>
+            <div class='stress'>虽然我只是羊</div>
+            <div class='stress'>喜羊羊美羊羊</div>
+            <div class='stress'>懒羊羊沸羊羊</div>
+            <div class='stress'>慢羊羊软绵绵</div>
+            <div class='stress'>红太狼灰太狼</div>
+        </div>
+        
+    </article>
+    <aside>
+        <img src="./images/nJA5uhS7NxNWUhVyAzNN5q.jpg" alt="" style='border-radius: 50%;width:200px;height:200px;' id='xiyangyang_image'>
+        <audio control="controls" id='music'>
+            <source src='./music/古倩敏、杨沛宜 - 别看我只是一只羊.mp3'>
+        </audio>
+        <div class='control'>
+            <div class='innercontrol' id='start_and_end'></div>
+            <div class='innercontrol'>
+                <div style='width:248.61px;height:5px;background:rgb(110, 110, 110);border-radius: 5px 5px 5px 5px;position: relative;' id='progressbar'>
+                    <div style='width:10px;height:10px;border-radius: 50%;background: orange;position: absolute;top:-3px;' id='point'></div>
+                </div>
+                
+                <div id='showtime'>00:00</div>
+            </div>
+            <div class='innercontrol' id='volume'></div>
+        </div>
+        <div class='download' style="width: 200px;height: 40px;position: relative;top:5%;left:35%">
+            <div style="background: url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat 0px 0px ;width:19px;height: 16px;left: 30px;top: 12px;position: absolute;"></div>
+            <div style="width:100px;height: 40px;position: absolute;left:60px">免费下载这首歌</div>
+        </div>
+        <div style=" margin-top:40px;display: flex;margin-left: 20%;">
+            <img src="./images/fDRw8gm9XazHuqiccYQiyb.jpg" alt="">
+            <div style="background: url(./images/YXrkzyWFURCRDWiSAfsdGx.jpg) no-repeat;width:228px;height:51px; font-size: 10px;">
+                <div style="width: 60%;margin-left: 6%;color: cornflowerblue;margin-top: 5px;">梁潇洋———h5</div>
+                <span style="margin-top: 7px;margin-left: 6%;display: inline-block;">喜羊羊与灰太狼</span>
+                <a href="" style="color: cornflowerblue;margin-top: 10px;margin-left: 50px;">去现场</a>
+            </div>
+        </div>
+    </aside>
+    <footer style='width:60% ;margin: 0 auto;position: relative;top: 200px;font-size: 13px;'>
+        <div>
+            <div style="display: inline-block;width: 50px;">评论</div>
+            <div style="display: inline-block;width:60px;" id='allcommentnum'>0条评论</div>
+        </div>
+        <hr style="width:100%;background-color:rgb(225, 225, 226); height:1px; border:none;margin-bottom: 20px;">
+        <div style="width: 100%;height:150px;">
+            <div style="display: flex;justify-content: space-between;flex-wrap: wrap;">
+                <img src="./images/fDRw8gm9XazHuqiccYQiyb.jpg" alt="" style="height: 64px;width: 64px;">
+                <textarea name="" id="mycomment" cols="30" rows="10" style="width:90%;height:100px;resize: none;border:0px;outline: none;background-color: rgb(231, 231, 231);">分享你的音乐见解</textarea>
+            </div>
+            <div style="display: flex;justify-content: flex-end; width: 100%;height: 35px;">
+                <div style="height: 35px;line-height: 35px;">&#128512;</div>
+                <div style="width: 70%;text-align: center;height: 35px;line-height: 35px;" id='numofwords'>已输入0个字</div>
+                <button style="background-color: rgb(205, 164, 50);border:0px;color:white;width: 100px;height: 35px;" id='submitComment'>评论</button>
+            </div>
+        </div>
+        <div>精彩评论</div>
+        <hr style="width:100%;background-color: rgb(233, 231, 231);">
+        <div id='recordComment' style="width:100%;border:0px;display: flex;flex-direction: column-reverse;"></div>
+        <div id='con' style="height: 100px;line-height: 100px;"></div>
+    </footer>
+</body>
+<script>
+    //开始暂停按钮
+    var start_and_end = document.getElementById('start_and_end');
+    //音乐
+    var music = document.getElementById('music');
+    //喜羊羊图片
+    var xiyangyang_image = document.getElementById('xiyangyang_image');
+    //进度条
+    var progressBar = document.getElementById('progressbar');
+    //进度条上小点
+    var point = document.getElementById('point');
+    //声音
+    var volume = document.getElementById('volume');
+    //播放进度/已播放时间
+    var showtime = document.getElementById('showtime');
+    //歌词
+    var stress = document.getElementsByClassName('stress');
+    //登录
+    var log_on = document.getElementById('log_on');
+    //提交按钮
+    var submit = document.getElementById('submit');
+
+    var telnum = document.getElementById('telnum');
+    var passwordofuser = document.getElementById('passwordofuser');
+    var nameofuser = document.getElementById('nameofuser');
+    var telnummes = telnum.value;
+    var passwordofusermes = passwordofuser.value;
+    var nameofusermes = nameofuser.value;
+
+    var recordComment = document.getElementById('recordComment');
+    var submitComment = document.getElementById('submitComment');
+    var mycomment = document.getElementById('mycomment');
+    var numofwords = document.getElementById('numofwords');
+
+    mycomment.onmouseout = function(){
+        numofwords.innerText = '已输入'+mycomment.value.length+'个字';
+    }
+
+    
+
+
+
+
+    var controlnum = 0;
+    var rotateimage=null;
+    var degnum = 0;
+    var alltime;
+    var curtime;
+    var rate;
+
+    log_on.onclick = function(){
+        var user = document.getElementById('user');
+        //console.log(user.style.display);
+        if(user.style.display == 'none'){
+            user.style.display = 'block';
+        }
+    }
+    submit.onclick = function(){
+        console.log(telnum.value);
+    }
+    /*静音设置的函数*/
+    volume.onclick = function(){
+        if(music.muted == false){
+            music.muted=true;
+            volume.style.backgroundPosition='0px -22px';
+        }else{
+            music.muted=false;
+            volume.style.backgroundPosition='-69px 0px';
+        }
+    }
+    start_and_end.onclick = function(){
+        //开始和暂停
+        
+        if(controlnum%2==0){
+            music.play();
+            start_and_end.style.background='url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat -207px -48px';
+            
+            rotateimage = setInterval(function(){
+                alltime = music.duration;
+                curtime = music.currentTime;
+                if(curtime<alltime){
+
+                    /*进度条的百分比*/
+                    rate = 100*curtime/alltime+'%';
+                    var pro = curtime/alltime*parseInt(progressBar.style.width);
+                    var pointpro = curtime/alltime*parseInt(progressBar.style.width)-5;
+                    point.style.left =''+pointpro+'px';
+                    xiyangyang_image.style.transform = 'rotate('+degnum+'deg)';
+                    degnum +=1;
+                    degnum = degnum%360;
+                    progressBar.style.background = 'linear-gradient(to right, orange '+pro+'px,rgb(110, 110, 110) '+pro+'px)';
+                    
+
+                    /*已经播放的时间*/
+                    minute = parseInt(curtime/60);
+                    second = parseInt(curtime%60);
+                    if(minute<10){
+                        minute = '0'+minute;
+                        if(second<10){
+                            second = '0'+second;
+                        }
+                    }else{
+                        if(second<10){
+                            second = '0'+second;
+                        }
+                    }
+                    showtime.innerText = minute+':'+second;
+
+
+
+                    /*当前所唱歌词的样式*/
+                    switch(true){
+                        case (curtime>1.02 && curtime<4.22):
+                            stress[0].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>4.22 && curtime<9.23):
+                            stress[0].setAttribute('style','color:black;font-size:15px;');
+                            stress[1].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>9.23 && curtime<11.31):
+                            stress[1].setAttribute('style','color:black;font-size:15px;');
+                            stress[2].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>11.31 && curtime<13.44):
+                            stress[2].setAttribute('style','color:black;font-size:15px;');
+                            stress[3].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>13.44 && curtime<15.45):
+                            stress[3].setAttribute('style','color:black;font-size:15px;');
+                            stress[4].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>15.45 && curtime<19.40):
+                            stress[4].setAttribute('style','color:black;font-size:15px;');
+                            stress[5].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>19.40 && curtime<23.35):
+                            stress[5].setAttribute('style','color:black;font-size:15px;');
+                            stress[6].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>23.35 && curtime<27.35):
+                            stress[6].setAttribute('style','color:black;font-size:15px;');
+                            stress[7].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>27.35 && curtime<31.15):
+                            stress[7].setAttribute('style','color:black;font-size:15px;');
+                            stress[8].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>31.15 && curtime<35.15):
+                            stress[8].setAttribute('style','color:black;font-size:15px;');
+                            stress[9].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>35.15 && curtime<38.95):
+                            stress[9].setAttribute('style','color:black;font-size:15px;');
+                            stress[10].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>38.95 && curtime<42.90):
+                            stress[10].setAttribute('style','color:black;font-size:15px;');
+                            stress[11].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>42.90 && curtime<46.89):
+                            stress[11].setAttribute('style','color:black;font-size:15px;');
+                            stress[12].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>46.89 && curtime<50.33):
+                            stress[12].setAttribute('style','color:black;font-size:15px;');
+                            stress[13].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>50.33 && curtime<52.46):
+                            stress[13].setAttribute('style','color:black;font-size:15px;');
+                            stress[14].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>52.46 && curtime<54.40):
+                            stress[14].setAttribute('style','color:black;font-size:15px;');
+                            stress[15].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>54.40 && curtime<56.33):
+                            stress[15].setAttribute('style','color:black;font-size:15px;');
+                            stress[16].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>56.33 && curtime<58.25):
+                            stress[16].setAttribute('style','color:black;font-size:15px;');
+                            stress[17].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>58.25 && curtime<60.28):
+                            stress[17].setAttribute('style','color:black;font-size:15px;');
+                            stress[18].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>60.28 && curtime<66.00):
+                            stress[18].setAttribute('style','color:black;font-size:15px;');
+                            stress[19].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>66.00 && curtime<68.02):
+                            stress[19].setAttribute('style','color:black;font-size:15px;');
+                            stress[20].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>68.02 && curtime<70.10):
+                            stress[20].setAttribute('style','color:black;font-size:15px;');
+                            stress[21].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>70.10 && curtime<72.12):
+                            stress[21].setAttribute('style','color:black;font-size:15px;');
+                            stress[22].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>72.12 && curtime<73.98):
+                            stress[22].setAttribute('style','color:black;font-size:15px;');
+                            stress[23].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>73.98 && curtime<75.04):
+                            stress[23].setAttribute('style','color:black;font-size:15px;');
+                            stress[24].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>75.04 && curtime<80.39):
+                            stress[24].setAttribute('style','color:black;font-size:15px;');
+                            stress[25].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>80.39 && curtime<84.10):
+                            stress[25].setAttribute('style','color:black;font-size:15px;');
+                            stress[26].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>84.10 && curtime<86.13):
+                            stress[26].setAttribute('style','color:black;font-size:15px;');
+                            stress[27].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>86.13 && curtime<88.35):
+                            stress[27].setAttribute('style','color:black;font-size:15px;');
+                            stress[28].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>88.35 && curtime<90.28):
+                            stress[28].setAttribute('style','color:black;font-size:15px;');
+                            stress[29].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>90.28 && curtime<94.23):
+                            stress[29].setAttribute('style','color:black;font-size:15px;');
+                            stress[30].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>94.23 && curtime<98.08):
+                            stress[30].setAttribute('style','color:black;font-size:15px;');
+                            stress[31].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>98.08 && curtime<102.03):
+                            stress[31].setAttribute('style','color:black;font-size:15px;');
+                            stress[32].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>102.03 && curtime<105.93):
+                            stress[32].setAttribute('style','color:black;font-size:15px;');
+                            stress[33].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>105.93 && curtime<109.42):
+                            stress[33].setAttribute('style','color:black;font-size:15px;');
+                            stress[34].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>109.42 && curtime<111.49):
+                            stress[34].setAttribute('style','color:black;font-size:15px;');
+                            stress[35].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>111.49 && curtime<113.41):
+                            stress[35].setAttribute('style','color:black;font-size:15px;');
+                            stress[36].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>113.41 && curtime<115.45):
+                            stress[36].setAttribute('style','color:black;font-size:15px;');
+                            stress[37].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>115.45 && curtime<117.26):
+                            stress[37].setAttribute('style','color:black;font-size:15px;');
+                            stress[38].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>117.26 && curtime<119.29):
+                            stress[38].setAttribute('style','color:black;font-size:15px;');
+                            stress[39].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>119.29 && curtime<125.01):
+                            stress[39].setAttribute('style','color:black;font-size:15px;');
+                            stress[40].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>125.01 && curtime<127.34):
+                            stress[40].setAttribute('style','color:black;font-size:15px;');
+                            stress[41].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>127.34 && curtime<129.09):
+                            stress[41].setAttribute('style','color:black;font-size:15px;');
+                            stress[42].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>129.09 && curtime<131.16):
+                            stress[42].setAttribute('style','color:black;font-size:15px;');
+                            stress[43].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>131.16 && curtime<133.07):
+                            stress[43].setAttribute('style','color:black;font-size:15px;');
+                            stress[44].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>133.07 && curtime<134.14):
+                            stress[44].setAttribute('style','color:black;font-size:15px;');
+                            stress[45].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>134.14 && curtime<139.39):
+                            stress[45].setAttribute('style','color:black;font-size:15px;');
+                            stress[46].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>139.39 && curtime<143.59):
+                            stress[46].setAttribute('style','color:black;font-size:15px;');
+                            stress[47].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>143.59 && curtime<147.11):
+                            stress[47].setAttribute('style','color:black;font-size:15px;');
+                            stress[48].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>147.11 && curtime<149.14):
+                            stress[48].setAttribute('style','color:black;font-size:15px;');
+                            stress[49].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>149.14 && curtime<151.06):
+                            stress[49].setAttribute('style','color:black;font-size:15px;');
+                            stress[50].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>151.06 && curtime<153.13):
+                            stress[50].setAttribute('style','color:black;font-size:15px;');
+                            stress[51].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>153.13 && curtime<(alltime-3)):
+                            stress[51].setAttribute('style','color:black;font-size:15px;');
+                            stress[52].setAttribute('style','color:orange;font-size:20px;');
+                            break;
+                        case (curtime>(alltime-3)):
+                            stress[52].setAttribute('style','color:black;font-size:15px;');
+                            break;
+                        default:
+                            break;
+                            
+                    }
+
+                    text.scrollTop = (curtime/alltime)*text.scrollHeight-150;
+
+
+
+
+
+
+
+
+
+
+
+
+                }else{
+                    start_and_end.style.background='url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat -162px 0px';
+                    clearInterval(rotateimage);
+                }
+                
+            },10);
+        }else{
+            music.pause();
+            start_and_end.style.background='url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat -162px 0px';
+            clearInterval(rotateimage);
+        }
+        controlnum++;
+    }
+    if(curtime>alltime){
+        start_and_end.style.background='url(./images/ft4wYB2sBrTzcGpwteSquz.jpg) no-repeat -162px 0px';
+        clearInterval(rotateimage);
+    }
+
+
+    var newcomment = document.getElementsByClassName('newcomment');
+    var localtime = document.getElementsByClassName('localtime');
+    var dropbtn = document.getElementsByClassName('dropbtn');
+    submitComment.onclick = function(){
+        recordComment.innerHTML += '<hr style="background-color:rgb(225, 225, 226); height:1px; border:none;">'+'<div style="display: flex; height: 100px;">'+'<img src="./images/fDRw8gm9XazHuqiccYQiyb.jpg" alt="" style="height: 80px;">'+
+        '<div style="width: 90%;left:10%;top:-83px;position:relative;">'+'<div style="display: flex;justify-content: space-between;">'+'<div style="width: 100px;text-align:center;color:chocolate;">梁潇洋</div>'+
+        '<div style="width: 100px;text-align:center;">分享</div>'+'</div>'+'<div style="height: 60px;">'+'<div class="newcomment"></div>'+'</div>'+'<div style="display: flex;justify-content: space-between;">'+
+        '<div style="width: 200px;" class="localtime"></div>'+'<div style="width:200px;display: flex;">'+'<button class="dropbtn" style="border:0px;background:none;width:60px;" >删除</button>'+'<div style="width:100px;" class="dianzanbox" ><span class="dianzan" >0</span><svg t="1623508385880" class="icon" style="width:20px;height:20px;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1232" width="200" height="200"><path d="M234.0864 881.6128V436.0704c0-18.0224-12.1344-32.6144-27.0848-32.6144H149.1968c-27.904 0-50.4832 27.2384-50.4832 60.8768v389.0688c0 33.6384 22.6304 60.8768 50.4832 60.8768h57.8048c14.9504 0 27.0848-14.6432 27.0848-32.6656z" fill="#7A7AF9" p-id="1233"></path><path d="M272.9984 890.7264V426.5472c0-10.7008 7.168-20.1216 17.5104-22.7328 36.4544-9.3184 120.1152-42.7008 155.6992-156.6208 21.6576-99.7888 45.1584-146.8416 114.8416-141.2096s74.3424 73.4208 74.3424 94.1056v160s-5.632 24.4736 17.8688 26.368c23.552 1.8944 207.104 0 207.104 0s100.7104-1.6896 68.7104 123.392c-27.8528 108.8-82.944 283.8528-96.8704 327.6288-2.8672 9.0624-6.9632 17.6128-12.3392 25.4976-13.4656 19.6608-41.7792 51.2-85.0432 51.2H296.4992c-13.0048 0.1024-23.5008-10.4448-23.5008-23.4496z" fill="#CCDAFF" p-id="1234"></path></svg></div>'+'<div>回复</div>'+'</div>'+'</div>'+'</div>'+'</div>';
+        var commentData = mycomment.value;
+        var time = new Date().getTime();
+        localStorage.setItem(time,commentData);
+        var newtime = new Date();
+        var time2 = new Date().getTime()+'2';
+        localStorage.setItem(time2,newtime.getFullYear()+'-'+(newtime.getMonth()+1)+'-'+newtime.getDate()+' '+newtime.getHours()+':'+newtime.getMinutes()+':'+newtime.getSeconds());
+        newcomment[recordComment.children.length/2-1].innerText=localStorage.getItem(time);
+        localtime[recordComment.children.length/2-1].innerText=localStorage.getItem(time2);
+        //console.log(recordComment.children.length/2-1);
+        var allcommentnum = document.getElementById('allcommentnum');
+        allcommentnum.innerText = (recordComment.children.length/2)+'条评论';
+        recordComment.style.height = (recordComment.children[0].style.height+recordComment.children[1].style.height)*recordComment.children.length/2;
+        Page(1,3);
+        
+
+    }
+
+    
+    // pno--页数
+    // size--每页显示记录数
+    function Page(pno,size){
+        var rownum = recordComment.children.length/2;//所有行数
+        var totalPage=0;//总页数
+        var pageSize =size;//每页显示的行数
+
+        //总共分几页
+        if(rownum/pageSize > parseInt(rownum/pageSize)){
+            totalPage=parseInt(rownum/pageSize)+1;
+        }else{
+            totalPage=parseInt(rownum/pageSize);
+        }
+        //当前页
+        var currentPage = pno;
+    　　var startRow = (currentPage - 1) * pageSize+1;//开始显示的行
+    　　var endRow = currentPage * pageSize;//结束显示的行
+    　　endRow = (endRow > rownum)? rownum : endRow; //三目运算符，
+        console.log(startRow);
+    　　console.log(endRow);//控制台打印出结束的行
+        
+
+
+
+        //遍历显示数据实现分页
+    　　for(var i=0;i< rownum;i++){
+            var irow = recordComment.children[2*i+1];
+            var irow2 = recordComment.children[2*i];
+    　　　　 if(i>=startRow-1 && i<=endRow-1){
+                irow.style.display='block';
+                irow2.style.display='block';
+    　　　　 }else{
+    　　　　　　irow.style.display = "none";
+               irow2.style.display = "none";
+    　　　　 }
+    　　}
+        
+    　　var tempStr = "共"+rownum+"条记录 分"+totalPage+"页 当前第"+currentPage+"页";
+        //判断页数>1时
+    　　if(currentPage>1){
+    　　　　tempStr += "<a href=\"#\" onClick=\"Page("+(1)+","+size+")\">首页</a>";
+    　　　　tempStr += "<a href=\"#\" onClick=\"Page("+(currentPage-1)+","+size+")\"><上一页</a>"
+    　　}else{
+    　　　　tempStr += "首页";
+    　　　　tempStr += "<上一页";
+    　　}
+        //判断页数<总页数时
+    　　if(currentPage<totalPage){
+    　　　　tempStr += "<a href=\"#\" onClick=\"Page("+(currentPage+1)+","+size+")\">下一页></a>";
+    　　　　tempStr += "<a href=\"#\" onClick=\"Page("+(totalPage)+","+size+")\">尾页</a>";
+    　　}else{
+    　　　　tempStr += "下一页>";
+    　　　　tempStr += "尾页";
+    　　}
+    　　document.getElementById("con").innerHTML = tempStr;
+
+
+
+
+
+
+
+
+
+    }
+    
+    
+
+</script>
+</html>
